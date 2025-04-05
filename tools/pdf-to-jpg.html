@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JPG Converter - Multi-Tools</title>
+    <meta name="description" content="Convert PDF files to JPG images online">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <h1 class="h4 mb-0">Multi-Tools</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>PDF to JPG Converter</h1>
+                <p class="lead">Convert PDF files to high-quality JPG images</p>
+            </div>
+
+            <!-- Tool Description -->
+            <div class="tool-description">
+                <p>Convert PDF documents to JPG images. You can convert specific pages or the entire document, and adjust the output quality.</p>
+            </div>
+
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- File Upload Section -->
+                <div class="mb-4">
+                    <div class="upload-area text-center p-5 border rounded bg-light">
+                        <i class="fas fa-file-pdf fa-3x text-primary mb-3"></i>
+                        <h5>Drop your PDF file here or click to upload</h5>
+                        <p class="text-muted small">Maximum file size: 10MB</p>
+                        <label for="pdfFile" class="btn btn-primary mt-2">
+                            <i class="fas fa-upload"></i> Choose File
+                        </label>
+                        <input type="file" id="pdfFile" class="d-none" accept=".pdf">
+                    </div>
+                    <div id="fileInfo" class="mt-2 text-muted small"></div>
+                </div>
+
+                <!-- Options -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Conversion Options</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="pageRange" class="form-label">Page Range:</label>
+                                    <select class="form-select" id="pageRange">
+                                        <option value="all">All Pages</option>
+                                        <option value="custom">Custom Range</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" id="customRangeInputs" style="display: none;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="startPage" class="form-label">From:</label>
+                                            <input type="number" class="form-control" id="startPage" min="1" value="1">
+                                        </div>
+                                        <div class="col">
+                                            <label for="endPage" class="form-label">To:</label>
+                                            <input type="number" class="form-control" id="endPage" min="1" value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="imageQuality" class="form-label">Image Quality:</label>
+                                    <select class="form-select" id="imageQuality">
+                                        <option value="high">High (300 DPI)</option>
+                                        <option value="medium" selected>Medium (150 DPI)</option>
+                                        <option value="low">Low (72 DPI)</option>
+                                    </select>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="combineImages" checked>
+                                    <label class="form-check-label" for="combineImages">
+                                        Combine all pages into one image
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Preview</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="previewArea" class="text-center">
+                                    <p class="text-muted">PDF preview will appear here</p>
+                                </div>
+                                <div class="progress mt-3" style="display: none;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-secondary" type="button" id="clearButton" disabled>
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button class="btn btn-primary" type="button" id="convertButton" disabled>
+                        <i class="fas fa-cog"></i> Convert to JPG
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" class="mt-4" style="display: none;">
+                    <h5>Converted Images</h5>
+                    <div id="imageResults" class="row g-3"></div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                        <button class="btn btn-success" type="button" id="downloadAllButton">
+                            <i class="fas fa-download"></i> Download All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2024 Multi-Tools. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for developers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JSZip for downloading multiple files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="./pdf-to-jpg.js"></script>
+</body>
+</html> 

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder/Decoder - Multi-Tools</title>
+    <meta name="description" content="Free online tool to encode and decode URLs">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <h1 class="h4 mb-0">Multi-Tools</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>URL Encoder/Decoder</h1>
+                <p class="lead">Encode and decode URLs with ease</p>
+            </div>
+
+            <!-- Tool Description -->
+            <div class="tool-description">
+                <p>Convert URLs between encoded and decoded formats. Perfect for handling special characters in URLs and query parameters.</p>
+            </div>
+
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- Input Section -->
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label for="inputText" class="form-label mb-0">Input:</label>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-primary" type="button" id="encodeButton">
+                                <i class="fas fa-lock"></i> Encode
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary" type="button" id="decodeButton">
+                                <i class="fas fa-unlock"></i> Decode
+                            </button>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="inputText" rows="6" placeholder="Enter text to encode or decode..."></textarea>
+                </div>
+
+                <!-- Options -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Encoding Options</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="encodeType" id="encodeStandard" value="standard" checked>
+                                    <label class="form-check-label" for="encodeStandard">
+                                        Standard URL Encoding
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="encodeType" id="encodeComponent" value="component">
+                                    <label class="form-check-label" for="encodeComponent">
+                                        URL Component Encoding
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="encodeSpaces" checked>
+                                    <label class="form-check-label" for="encodeSpaces">
+                                        Convert Spaces to Plus (+)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">URL Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <small class="text-muted">Protocol:</small>
+                                    <div id="urlProtocol">-</div>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Domain:</small>
+                                    <div id="urlDomain">-</div>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Path:</small>
+                                    <div id="urlPath">-</div>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Query Parameters:</small>
+                                    <div id="urlQuery">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Section -->
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label for="outputText" class="form-label mb-0">Result:</label>
+                        <button class="btn btn-sm btn-success" type="button" id="copyButton">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <textarea class="form-control" id="outputText" rows="6" readonly></textarea>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-secondary" type="button" id="clearButton">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button class="btn btn-primary" type="button" id="swapButton">
+                        <i class="fas fa-exchange-alt"></i> Swap Input/Output
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2024 Multi-Tools. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for developers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="./url-encoder.js"></script>
+</body>
+</html> 

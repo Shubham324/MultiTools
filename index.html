@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tools - Your All-in-One Online Toolkit</title>
+    <meta name="description" content="Free online tools for developers, designers, and everyday users. Image converters, calculators, text tools, and more.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <h1 class="h4 mb-0">Multi-Tools</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#pdfTools" id="pdfToolsDropdown" role="button" data-bs-toggle="dropdown">
+                                PDF Tools
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/pdf-to-jpg.html">PDF to JPG</a></li>
+                                <li><a class="dropdown-item" href="tools/jpg-to-pdf.html">JPG to PDF</a></li>
+                                <li><a class="dropdown-item" href="tools/word-to-pdf.html">Word to PDF</a></li>
+                                <li><a class="dropdown-item" href="tools/pdf-to-word.html">PDF to Word</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#imageTools" id="imageToolsDropdown" role="button" data-bs-toggle="dropdown">
+                                Image Tools
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/image-to-png.html">Image to PNG</a></li>
+                                <li><a class="dropdown-item" href="tools/image-to-jpg.html">Image to JPG</a></li>
+                                <li><a class="dropdown-item" href="tools/image-resizer.html">Image Resizer</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#textTools" id="textToolsDropdown" role="button" data-bs-toggle="dropdown">
+                                Text Tools
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/word-counter.html">Word Counter</a></li>
+                                <li><a class="dropdown-item" href="tools/case-converter.html">Case Converter</a></li>
+                                <li><a class="dropdown-item" href="tools/text-to-speech.html">Text to Speech</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#devTools" id="devToolsDropdown" role="button" data-bs-toggle="dropdown">
+                                Developer Tools
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="tools/json-formatter.html">JSON Formatter</a></li>
+                                <li><a class="dropdown-item" href="tools/css-minifier.html">CSS Minifier</a></li>
+                                <li><a class="dropdown-item" href="tools/color-picker.html">Color Picker</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <!-- Search Section -->
+        <section class="search-section mb-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input type="text" id="toolSearch" class="form-control form-control-lg" placeholder="Search for tools...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Space -->
+        <div class="ad-space mb-4">
+            <div class="container">
+                <div style="min-height: 90px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                    Advertisement Space
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Grid -->
+        <section class="tools-grid">
+            <!-- PDF Tools Category -->
+            <div class="category-section mb-5" id="pdfTools">
+                <h2 class="category-title">PDF Tools</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Image Tools Category -->
+            <div class="category-section mb-5" id="imageTools">
+                <h2 class="category-title">Image Tools</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Text Tools Category -->
+            <div class="category-section mb-5" id="textTools">
+                <h2 class="category-title">Text Tools</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Developer Tools Category -->
+            <div class="category-section mb-5" id="devTools">
+                <h2 class="category-title">Developer Tools</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Math & Calculators Category -->
+            <div class="category-section mb-5" id="calculators">
+                <h2 class="category-title">Math & Calculators</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Unit Converters Category -->
+            <div class="category-section mb-5" id="converters">
+                <h2 class="category-title">Unit Converters</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Security Tools Category -->
+            <div class="category-section mb-5" id="securityTools">
+                <h2 class="category-title">Security & Encryption Tools</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Tool cards will be populated dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+            <!-- Ad Space -->
+            <div class="ad-space mb-4">
+                <div class="container">
+                    <div style="min-height: 90px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                        Advertisement Space
+                    </div>
+                </div>
+            </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>About Multi-Tools</h5>
+                    <p class="text-muted">Your one-stop destination for online tools. We provide free utilities for developers, designers, and everyday users.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted">Home</a></li>
+                        <li><a href="about.html" class="text-muted">About</a></li>
+                        <li><a href="contact.html" class="text-muted">Contact</a></li>
+                        <li><a href="privacy.html" class="text-muted">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4 mb-lg-0">
+                    <h5>Tool Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#imageTools" class="text-muted">Image Tools</a></li>
+                        <li><a href="#textTools" class="text-muted">Text Tools</a></li>
+                        <li><a href="#devTools" class="text-muted">Developer Tools</a></li>
+                        <li><a href="#calculators" class="text-muted">Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Newsletter</h5>
+                    <p class="text-muted">Subscribe to get updates about new tools and features.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2024 Multi-Tools. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for developers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

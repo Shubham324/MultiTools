@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator - Multi-Tools</title>
+    <meta name="description" content="Free online tool to generate Lorem Ipsum placeholder text">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <h1 class="h4 mb-0">Multi-Tools</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Lorem Ipsum Generator</h1>
+                <p class="lead">Generate placeholder text for your designs</p>
+            </div>
+
+            <!-- Tool Description -->
+            <div class="tool-description">
+                <p>Generate Lorem Ipsum text with customizable options. Perfect for mockups, templates, and design prototypes.</p>
+            </div>
+
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+                <!-- Options -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Generation Options</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="generationType" class="form-label">Type:</label>
+                                    <select class="form-select" id="generationType">
+                                        <option value="paragraphs">Paragraphs</option>
+                                        <option value="sentences">Sentences</option>
+                                        <option value="words">Words</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="amount" class="form-label">Amount:</label>
+                                    <input type="number" class="form-control" id="amount" value="3" min="1" max="100">
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="startWithLorem" checked>
+                                    <label class="form-check-label" for="startWithLorem">
+                                        Start with "Lorem ipsum"
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Format Options</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="format" class="form-label">HTML Format:</label>
+                                    <select class="form-select" id="format">
+                                        <option value="plain">Plain Text</option>
+                                        <option value="html-p">&lt;p&gt; tags</option>
+                                        <option value="html-div">&lt;div&gt; tags</option>
+                                    </select>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="addLineBreaks" checked>
+                                    <label class="form-check-label" for="addLineBreaks">
+                                        Add line breaks between paragraphs
+                                    </label>
+                                </div>
+                                <button class="btn btn-primary w-100" type="button" id="generateButton">
+                                    <i class="fas fa-sync-alt"></i> Generate Text
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Area -->
+                <div class="mb-4">
+                    <label for="outputText" class="form-label">Generated Text:</label>
+                    <textarea class="form-control" id="outputText" rows="10" readonly></textarea>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-secondary" type="button" id="clearButton">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button class="btn btn-success" type="button" id="copyButton">
+                        <i class="fas fa-copy"></i> Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2024 Multi-Tools. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for developers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="./lorem-ipsum.js"></script>
+</body>
+</html> 
